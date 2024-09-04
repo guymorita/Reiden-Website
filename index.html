@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Productivity Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#7C3AED',
+                        background: '#F3F4F6',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #F3F4F6, #8a5cf65f, #2dd4be73 );
+        }
+    </style>
+</head>
+<body class="font-sans">
+    <div class="hero-gradient">
+        <header class="container mx-auto px-4 py-6">
+            <nav class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-primary">Reiden.ai</div>
+                <div class="space-x-4">
+                    <a href="#features" class="text-gray-700 hover:text-primary">Features</a>
+                    <a href="#" class="text-gray-700 hover:text-primary">About</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section>
+                <div class="container mx-auto px-4 py-16 text-center">
+                    <h1 class="font-serif text-5xl md:text-6xl font-bold mb-6 text-gray-900">Don't Get Left Behind</h1>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-600">Save 8 Days a Year with AI-Powered Efficiency</p>
+                    <div class="mb-8">
+                        <input type="email" placeholder="Enter your email" class="px-4 py-2 rounded-l-full border-2 border-primary focus:outline-none focus:ring-2 focus:ring-primary">
+                        <button class="bg-primary text-white px-6 py-2 rounded-r-full hover:bg-secondary transition duration-300">Download Now - It's Free!</button>
+                    </div>
+                    <div class="max-w-4xl mx-auto mb-16">
+                        <video class="w-full rounded-lg shadow-xl" autoplay loop muted>
+                            <source src="your-demo-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <main>
+        <section id="features" class="bg-white py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="font-serif text-4xl font-bold mb-8 text-center">Key Features</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Real-time Analysis</h3>
+                        <p class="text-gray-600">Analyze your workflow in real-time for instant improvements</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-secondary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Customized Suggestions</h3>
+                        <p class="text-gray-600">Get personalized shortcut recommendations</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Multi-app Support</h3>
+                        <p class="text-gray-600">Works seamlessly across 20+ popular apps</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gray-100 py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="font-serif text-4xl font-bold mb-8 text-center">What Our Users Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-gray-600 mb-4">"This app has revolutionized my workflow. I'm saving hours every week!"</p>
+                        <p class="font-semibold">- John Doe, Software Engineer</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-gray-600 mb-4">"The personalized suggestions are spot-on. It's like having a productivity coach."</p>
+                        <p class="font-semibold">- Jane Smith, Graphic Designer</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <p class="text-gray-600 mb-4">"I've become so much more efficient. My colleagues are amazed at my productivity."</p>
+                        <p class="font-semibold">- Mike Johnson, Data Analyst</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <section class="bg-primary text-white py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold mb-8">Ready to Boost Your Productivity?</h2>
+                <button class="bg-white text-primary px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300">Download Now - It's Free!</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2024 Reiden. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-primary">Privacy Policy</a>
+                    <a href="#" class="hover:text-primary">Terms of Service</a>
+                    <a href="#" class="hover:text-primary">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

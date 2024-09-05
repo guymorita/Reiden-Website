@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Productivity Assistant</title>
+    <title>Reiden | AI Productivity Assistant</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script>
@@ -46,10 +46,15 @@
                 <div class="container mx-auto px-4 py-16 text-center">
                     <h1 class="font-serif text-5xl md:text-6xl font-bold mb-6 text-gray-900">Don't Get Left Behind</h1>
                     <p class="text-xl md:text-2xl mb-8 text-gray-600">Save 8 Days a Year with AI-Powered Efficiency</p>
-                    <div class="mb-8">
-                        <input type="email" placeholder="Enter your email" class="px-4 py-2 rounded-l-full border-2 border-primary focus:outline-none focus:ring-2 focus:ring-primary">
-                        <button class="bg-primary text-white px-6 py-2 rounded-r-full hover:bg-secondary transition duration-300">Download Now - It's Free!</button>
-                    </div>
+                    <form id="downloadForm" class="mb-8 flex justify-center">
+                        <input type="email" id="emailInput" placeholder="Email (optional)" class="px-4 py-2 rounded-l-full border-2 border-primary focus:outline-none focus:ring-2 focus:ring-primary">
+                        <button type="submit" class="bg-primary text-white px-6 py-2 rounded-r-full hover:bg-secondary transition duration-300 flex items-center">
+                            <span>Download Reiden</span>
+                            <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                            </svg>
+                        </button>
+                    </form>
                     <div class="max-w-4xl mx-auto mb-16">
                         <video class="w-full rounded-lg shadow-xl" autoplay loop muted>
                             <source src="your-demo-video.mp4" type="video/mp4">
@@ -59,6 +64,7 @@
                 </div>
             </section>
         </main>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     </div>
     <main>
         <section id="features" class="bg-white py-16">
@@ -139,5 +145,35 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('downloadForm');
+            const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/1L_CtC7V1J2wl7DoHQ5A0aP5dOZZ-VDFImk7SpdZGu0I/formResponse';
+            const DOWNLOAD_URL = 'https://github.com/guymorita/Reiden-Releases/raw/main/releases/v0.3.14/Reiden-Installer.dmg';
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('emailInput').value.trim();
+
+                if (email) {
+                    const formData = new FormData();
+                    formData.append('entry.85538098', email);
+
+                    fetch(GOOGLE_FORM_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        body: formData
+                    }).then(() => {
+                        console.log('Form submitted');
+                    }).catch(error => {
+                        console.error('Error:', error);
+                    });
+                }
+
+                // Trigger download
+                window.location.href = DOWNLOAD_URL;
+            });
+        });
+    </script>
 </body>
 </html>

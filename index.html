@@ -27,6 +27,12 @@
         .hero-gradient {
             background: linear-gradient(135deg, #F3F4F6, #8a5cf65f, #2dd4be73 );
         }
+        #app-logos > div {
+            transition: transform 0.3s ease;
+        }
+        #app-logos > div:hover {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body class="font-sans">
@@ -49,7 +55,7 @@
                     <form id="downloadForm" class="mb-8 flex justify-center">
                         <input type="email" id="emailInput" placeholder="Email (optional)" class="px-4 py-2 rounded-l-full border-2 border-primary focus:outline-none focus:ring-2 focus:ring-primary">
                         <button type="submit" class="bg-primary text-white px-6 py-2 rounded-r-full hover:bg-secondary transition duration-300 flex items-center">
-                            <span>Download Reiden</span>
+                            <span>Download Pre-Release</span>
                             <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
                             </svg>
@@ -67,6 +73,14 @@
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     </div>
     <main>
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="font-serif text-4xl font-bold mb-8 text-center">Supported Applications</h2>
+                <div id="app-logos" class="flex flex-wrap justify-center items-center gap-8">
+                    <!-- SVGs will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
         <section id="features" class="bg-white py-16">
             <div class="container mx-auto px-4">
                 <h2 class="font-serif text-4xl font-bold mb-8 text-center">Key Features</h2>
@@ -175,5 +189,61 @@
             });
         });
     </script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const logoContainer = document.getElementById('app-logos');
+        const svgFiles = [
+            '4202101_outlook_logo_microsoft_social_social media_icon.svg',
+            '7564187_figma_logo_brand_icon.svg',
+            'Arc_(browser)_logo.svg',
+            'chrome-wordmark.svg',
+            'docs-wordmark.svg',
+            'excel-4.svg',
+            'figma-wordmark.svg',
+            'firefox-wordmark.svg',
+            'gmail-wordmark.svg',
+            'google-chrome-3.svg',
+            'icons8-final-cut-pro-x.svg',
+            'icons8-mail.svg',
+            'icons8-messages.svg',
+            'icons8-zoom.svg',
+            'macos.svg',
+            'notion-wordmark.svg',
+            'photoshop-wordmark.svg',
+            'safari-wordmark.svg',
+            'sheets-wordmark.svg',
+            'slack-wordmark.svg',
+            'whatsapp-wordmark.svg',
+            'word-1.svg',
+            'zoom-wordmark.svg'
+        ];
+
+        svgFiles.forEach(filename => {
+            fetch(`./company_svgs/${filename}`)
+                .then(response => response.text())
+                .then(svgContent => {
+                    const div = document.createElement('div');
+                    div.className = 'flex items-center justify-center p-2';
+                    div.style.width = '160px'; // Set a fixed width
+                    div.style.height = '60px'; // Set a fixed height
+                    div.innerHTML = svgContent;
+
+                    // Adjust SVG to fit within the container
+                    const svg = div.querySelector('svg');
+                    if (svg) {
+                        svg.setAttribute('width', '100%');
+                        svg.setAttribute('height', '100%');
+                        svg.style.maxWidth = '100%';
+                        svg.style.maxHeight = '100%';
+                        svg.style.objectFit = 'contain';
+                    }
+
+                    logoContainer.appendChild(div);
+                })
+                .catch(error => console.error(`Error loading ${filename}:`, error));
+        });
+    });
+    </script>
+
 </body>
 </html>

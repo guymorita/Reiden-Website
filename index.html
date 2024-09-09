@@ -35,6 +35,9 @@
         .hero-gradient {
             background: linear-gradient(135deg, #F3F4F6, #8a5cf65f, #2dd4be73 );
         }
+        .gradient-bg {
+            background: linear-gradient(135deg, #F3F4F6, #a78bfa40, #5eead480);
+        }
         #app-logos > div {
             transition: transform 0.3s ease;
         }
@@ -50,7 +53,7 @@
                 <div class="text-2xl font-bold text-primary">Reiden.ai</div>
                 <div class="space-x-4">
                     <a href="#features" class="text-gray-700 hover:text-primary">Features</a>
-                    <a href="#" class="text-gray-700 hover:text-primary">About</a>
+                    <a href="#how-it-works" class="text-gray-700 hover:text-primary">How It Works</a>
                 </div>
             </nav>
         </header>
@@ -86,7 +89,6 @@
         </main>
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     </div>
-    <main>
         <section class="py-16 bg-gray-50">
             <div class="container mx-auto px-4">
                 <h2 class="font-serif text-4xl font-bold mb-8 text-center">Supported Applications</h2>
@@ -95,44 +97,122 @@
                 </div>
             </div>
         </section>
-        <section id="features" class="bg-white py-16">
+        <section id="how-it-works" class="bg-gray-50 py-20">
             <div class="container mx-auto px-4">
-                <h2 class="font-serif text-4xl font-bold mb-8 text-center">Key Features</h2>
+                <h2 class="font-serif text-4xl font-bold mb-12 text-center">How it works</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="text-center">
-                        <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
+                    <div class="text-center relative">
+                        <div class="relative inline-block">
+                            <div class="absolute -top-2 -left-2 bg-primary text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-sm">1</div>
+                            <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Real-time Analysis</h3>
-                        <p class="text-gray-600">Analyze your workflow in real-time for instant improvements</p>
+                        <h3 class="text-xl font-semibold mb-2">Install Reiden</h3>
+                        <p class="text-gray-600">Reiden runs imperceptibly in the background.</p>
                     </div>
-                    <div class="text-center">
-                        <div class="bg-secondary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-                            </svg>
+                    <div class="text-center relative">
+                        <div class="relative inline-block">
+                            <div class="absolute -top-2 -left-2 bg-yellow-400 text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-sm">2</div>
+                            <div class="bg-yellow-400 text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                                </svg>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Customized Suggestions</h3>
-                        <p class="text-gray-600">Get personalized shortcut recommendations</p>
+                        <h3 class="text-xl font-semibold mb-2">Observe and Recommend</h3>
+                        <p class="text-gray-600">Reiden identifies areas where you're slow and suggests keyboard shortcuts to improve efficiency.</p>
                     </div>
-                    <div class="text-center">
-                        <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-                            </svg>
+                    <div class="text-center relative">
+                        <div class="relative inline-block">
+                            <div class="absolute -top-2 -left-2 bg-secondary text-white rounded-full w-6 h-6 flex items-center justify-center font-bold text-sm">3</div>
+                            <div class="bg-secondary text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
                         </div>
-                        <h3 class="text-xl font-semibold mb-2">Multi-app Support</h3>
-                        <p class="text-gray-600">Works seamlessly across 20+ popular apps</p>
+                        <h3 class="text-xl font-semibold mb-2">Save Time</h3>
+                        <p class="text-gray-600">Use shortcuts and save time. Just 5 clicks replaced daily will save you an hour a year.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gradient-bg py-16 flex items-center">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-gray-800"></h2>
+            </div>
+        </section>
+        <section id="features" class="bg-white py-20">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-start justify-between">
+                    <div class="md:w-1/4 mb-8 md:mb-0 md:pr-8">
+                        <h2 class="font-serif text-4xl font-bold mb-4">Key Features</h2>
+                        <p class="text-gray-600 mb-4">Discover how Reiden can revolutionize your workflow with these powerful features.</p>
+                    </div>
+                    <div class="md:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-gray-100 rounded-lg p-6 flex items-start">
+                            <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Real-time Analysis</h3>
+                                <p class="text-gray-600">Analyze your workflow in real-time for instant improvements</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 rounded-lg p-6 flex items-start">
+                            <div class="bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Customized Suggestions</h3>
+                                <p class="text-gray-600">Get personalized shortcut recommendations</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 rounded-lg p-6 flex items-start">
+                            <div class="bg-primary text-white rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Multi-app Support</h3>
+                                <p class="text-gray-600">Works seamlessly across 20+ popular apps</p>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 rounded-lg p-6 flex items-start">
+                            <div class="bg-secondary text-white rounded-full w-12 h-12 flex items-center justify-center mr-4 flex-shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Customizable Settings</h3>
+                                <p class="text-gray-600">Tailor Reiden to your specific needs and preferences</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-gray-100 py-16">
+        <div class="bg-gray-200 py-16">
             <div class="container mx-auto px-4">
-                <h2 class="font-serif text-4xl font-bold mb-8 text-center">What Our Users Say</h2>
+                <blockquote class="text-2xl font-serif italic text-center">
+                    "Reiden has transformed the way I work. It's like having a personal productivity coach."
+                </blockquote>
+            </div>
+        </div>
+
+        <section class="bg-white py-20">
+            <div class="container mx-auto px-4">
+                <h2 class="font-serif text-4xl font-bold mb-12 text-center">What Our Users Say</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <p class="text-gray-600 mb-4">"This app has revolutionized my workflow. I'm saving hours every week!"</p>
@@ -149,12 +229,26 @@
                 </div>
             </div>
         </section>
-    </main>
 
-        <section class="bg-primary text-white py-16">
+        <section class="bg-indigo-800 text-white py-12">
+            <div class="container mx-auto px-4 max-w-2xl">
+                <h2 class="font-serif text-3xl font-bold mb-4 text-center">Powerful Privacy, By Design</h2>
+                <div class="bg-indigo-700 rounded-lg p-5 shadow-lg">
+                    <svg class="w-12 h-12 text-indigo-200 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                    </svg>
+                    <p class="text-lg mb-3 text-center font-semibold">We protect your data</p>
+                    <p class="text-indigo-100 text-sm mb-3">Your data never leaves your device. Opt in to share select usage data, and help us innovate. Always your choice, always protected.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gradient-bg py-20">
             <div class="container mx-auto px-4 text-center">
-                <h2 class="font-serif text-3xl md:text-4xl font-bold mb-8">Ready to Boost Your Productivity?</h2>
-                <button class="bg-white text-primary px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300">Download Now - It's Free!</button>
+                <h2 class="font-serif text-3xl md:text-4xl font-bold mb-8 text-gray-800">Ready to Boost Your Productivity?</h2>
+                <button id="bottomDownloadButton" class="bg-white text-purple-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-md hover:shadow-lg">
+                    Download Pre-Release
+                </button>
             </div>
         </section>
     </main>
@@ -165,10 +259,23 @@
                 <div class="mb-4 md:mb-0">
                     <p>&copy; 2024 Reiden. All rights reserved.</p>
                 </div>
-                <div class="flex space-x-4">
-                    <a href="#" class="hover:text-primary">Privacy Policy</a>
-                    <a href="#" class="hover:text-primary">Terms of Service</a>
-                    <a href="#" class="hover:text-primary">Contact</a>
+                <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 items-center">
+                    <div class="flex space-x-4">
+                        <!-- <a href="#" class="hover:text-primary">Privacy Policy</a>
+                        <a href="#" class="hover:text-primary">Terms of Service</a> -->
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://github.com/guymorita/Reiden-Releases" target="_blank" rel="noopener noreferrer" class="hover:text-primary">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                            </svg>
+                        </a>
+                        <a href="https://discord.gg/n72tj4BZ" target="_blank" rel="noopener noreferrer" class="hover:text-primary">
+                            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -176,8 +283,19 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('downloadForm');
+            const bottomDownloadButton = document.getElementById('bottomDownloadButton');
             const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/1L_CtC7V1J2wl7DoHQ5A0aP5dOZZ-VDFImk7SpdZGu0I/formResponse';
             const DOWNLOAD_URL = 'https://github.com/guymorita/Reiden-Releases/raw/main/releases/v0.4.1/Reiden-Installer.dmg';
+
+            function initiateDownload(location) {
+                gtag('event', 'download_click', {
+                    'event_category': 'Button',
+                    'event_label': 'Download Button Clicked - ' + location
+                });
+
+                // Trigger download
+                window.location.href = DOWNLOAD_URL;
+            }
 
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
@@ -194,79 +312,76 @@
                     }).then(() => {
                         console.log('Form submitted');
                         gtag('event', 'email_submission', {
-                        'event_category': 'Form',
-                        'event_label': 'Email Submitted'
-                    });
+                            'event_category': 'Form',
+                            'event_label': 'Email Submitted'
+                        });
                     }).catch(error => {
                         console.error('Error:', error);
                     });
                 }
 
-                gtag('event', 'download_click', {
-                    'event_category': 'Button',
-                    'event_label': 'Download Button Clicked'
-                });
+                initiateDownload('Top');
+            });
 
-                // Trigger download
-                window.location.href = DOWNLOAD_URL;
+            bottomDownloadButton.addEventListener('click', function() {
+                initiateDownload('Bottom');
             });
         });
     </script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const logoContainer = document.getElementById('app-logos');
-        const svgFiles = [
-            '4202101_outlook_logo_microsoft_social_social media_icon.svg',
-            '7564187_figma_logo_brand_icon.svg',
-            'Arc_(browser)_logo.svg',
-            'chrome-wordmark.svg',
-            'docs-wordmark.svg',
-            'excel-4.svg',
-            'figma-wordmark.svg',
-            'firefox-wordmark.svg',
-            'gmail-wordmark.svg',
-            'google-chrome-3.svg',
-            'icons8-final-cut-pro-x.svg',
-            'icons8-mail.svg',
-            'icons8-messages.svg',
-            'icons8-zoom.svg',
-            'macos.svg',
-            'notion-wordmark.svg',
-            'photoshop-wordmark.svg',
-            'safari-wordmark.svg',
-            'sheets-wordmark.svg',
-            'slack-wordmark.svg',
-            'whatsapp-wordmark.svg',
-            'word-1.svg',
-            'zoom-wordmark.svg'
-        ];
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const logoContainer = document.getElementById('app-logos');
+            const svgFiles = [
+                '4202101_outlook_logo_microsoft_social_social media_icon.svg',
+                // '7564187_figma_logo_brand_icon.svg',
+                'Arc_(browser)_logo.svg',
+                // 'chrome-wordmark.svg',
+                'docs-wordmark.svg',
+                'excel-4.svg',
+                'figma-wordmark.svg',
+                'firefox-wordmark.svg',
+                'gmail-wordmark.svg',
+                'google-chrome-3.svg',
+                'icons8-final-cut-pro-x.svg',
+                'icons8-mail.svg',
+                'icons8-messages.svg',
+                // 'icons8-zoom.svg',
+                'macos.svg',
+                'notion-wordmark.svg',
+                'photoshop-wordmark.svg',
+                'safari-wordmark.svg',
+                'sheets-wordmark.svg',
+                'slack-wordmark.svg',
+                'whatsapp-wordmark.svg',
+                'word-1.svg',
+                'zoom-wordmark.svg'
+            ];
 
-        svgFiles.forEach(filename => {
-            fetch(`./company_svgs/${filename}`)
-                .then(response => response.text())
-                .then(svgContent => {
-                    const div = document.createElement('div');
-                    div.className = 'flex items-center justify-center p-2';
-                    div.style.width = '160px'; // Set a fixed width
-                    div.style.height = '60px'; // Set a fixed height
-                    div.innerHTML = svgContent;
+            svgFiles.forEach(filename => {
+                fetch(`./company_svgs/${filename}`)
+                    .then(response => response.text())
+                    .then(svgContent => {
+                        const div = document.createElement('div');
+                        div.className = 'flex items-center justify-center p-2';
+                        div.style.width = '160px'; // Set a fixed width
+                        div.style.height = '60px'; // Set a fixed height
+                        div.innerHTML = svgContent;
 
-                    // Adjust SVG to fit within the container
-                    const svg = div.querySelector('svg');
-                    if (svg) {
-                        svg.setAttribute('width', '100%');
-                        svg.setAttribute('height', '100%');
-                        svg.style.maxWidth = '100%';
-                        svg.style.maxHeight = '100%';
-                        svg.style.objectFit = 'contain';
-                    }
+                        // Adjust SVG to fit within the container
+                        const svg = div.querySelector('svg');
+                        if (svg) {
+                            svg.setAttribute('width', '100%');
+                            svg.setAttribute('height', '100%');
+                            svg.style.maxWidth = '100%';
+                            svg.style.maxHeight = '100%';
+                            svg.style.objectFit = 'contain';
+                        }
 
-                    logoContainer.appendChild(div);
-                })
-                .catch(error => console.error(`Error loading ${filename}:`, error));
+                        logoContainer.appendChild(div);
+                    })
+                    .catch(error => console.error(`Error loading ${filename}:`, error));
+            });
         });
-    });
     </script>
-
 </body>
 </html>

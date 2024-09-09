@@ -193,10 +193,19 @@
                         body: formData
                     }).then(() => {
                         console.log('Form submitted');
+                        gtag('event', 'email_submission', {
+                        'event_category': 'Form',
+                        'event_label': 'Email Submitted'
+                    });
                     }).catch(error => {
                         console.error('Error:', error);
                     });
                 }
+
+                gtag('event', 'download_click', {
+                    'event_category': 'Button',
+                    'event_label': 'Download Button Clicked'
+                });
 
                 // Trigger download
                 window.location.href = DOWNLOAD_URL;

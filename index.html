@@ -52,6 +52,52 @@
         .gradient-bg {
             background: linear-gradient(135deg, #F3F4F6, #a78bfa40, #5eead480);
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-container {
+            transition: all 0.3s ease;
+            position: relative;
+            width: 100%;
+            /* Adjust the height as needed */
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #5043E3;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .logo-container:hover::after {
+            width: 80%;
+        }
+
+        .logo-svg {
+            transition: all 0.3s ease;
+            /* Comment out the next line to remove max height constraint */
+            max-height: 50px; /* Adjust this value to set the maximum height of logos */
+            width: auto;
+            height: auto;
+        }
+
+        .logo-container:hover .logo-svg {
+            transform: translateY(-5px);
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+        }
+
         #app-logos > div {
             transition: transform 0.3s ease;
         }
@@ -132,14 +178,15 @@
         </main>
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     </div>
-        <section class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4">
-                <h2 class="font-serif text-4xl font-bold mb-8 text-center">Supported Applications</h2>
-                <div id="app-logos" class="flex flex-wrap justify-center items-center gap-8">
-                    <!-- SVGs will be dynamically inserted here -->
-                </div>
+    <section class="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container mx-auto px-4">
+            <h2 class="font-serif text-5xl font-bold mb-6 text-center text-gray-800">Supported Applications</h2>
+            <p class="text-center text-xl text-gray-600 mb-16 max-w-3xl mx-auto">Seamlessly integrated with industry-leading software to speed your workflow.</p>
+            <div id="app-logos" class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-12 justify-items-center">
+                <!-- SVGs will be dynamically inserted here -->
             </div>
-        </section>
+        </div>
+    </section>
         <section id="how-it-works" class="bg-gray-50 py-20">
             <div class="container mx-auto px-4">
                 <h2 class="font-serif text-4xl font-bold mb-12 text-center">How it works</h2>
@@ -371,61 +418,58 @@
             });
         });
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const logoContainer = document.getElementById('app-logos');
-            const svgFiles = [
-                '4202101_outlook_logo_microsoft_social_social media_icon.svg',
-                // '7564187_figma_logo_brand_icon.svg',
-                'Arc_(browser)_logo.svg',
-                // 'chrome-wordmark.svg',
-                // 'docs-wordmark.svg',
-                // 'excel-4.svg',
-                'figma-wordmark.svg',
-                'firefox-wordmark.svg',
-                'gmail-wordmark.svg',
-                'google-chrome-3.svg',
-                'icons8-final-cut-pro-x.svg',
-                'icons8-mail.svg',
-                'icons8-messages.svg',
-                // 'icons8-zoom.svg',
-                'macos.svg',
-                'notion-wordmark.svg',
-                // 'photoshop-wordmark.svg',
-                'safari-wordmark.svg',
-                'sheets-wordmark.svg',
-                'slack-wordmark.svg',
-                'vscode-wordmark.svg',
-                // 'whatsapp-wordmark.svg',
-                // 'word-1.svg',
-                'zoom-wordmark.svg'
-            ];
+ <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const logoContainer = document.getElementById('app-logos');
+        const svgFiles = [
+            '4202101_outlook_logo_microsoft_social_social media_icon.svg',
+            'Arc_(browser)_logo.svg',
+            'figma-wordmark.svg',
+            'firefox-wordmark.svg',
+            'gmail-wordmark.svg',
+            'google-chrome-3.svg',
+            'icons8-final-cut-pro-x.svg',
+            'icons8-mail.svg',
+            'icons8-messages.svg',
+            'macos.svg',
+            'notion-wordmark.svg',
+            'safari-wordmark.svg',
+            'sheets-wordmark.svg',
+            'slack-wordmark.svg',
+            'vscode-wordmark.svg',
+            'zoom-wordmark.svg'
+        ];
+        svgFiles.forEach((filename, index) => {
+            fetch(`./company_svgs/${filename}`)
+                .then(response => response.text())
+                .then(svgContent => {
+                    const div = document.createElement('div');
+                    div.className = 'logo-container';
+                    div.style.animation = `fadeIn 0.5s ease forwards ${index * 0.1}s`;
+                    div.style.opacity = '0';
+                    div.innerHTML = svgContent;
 
-            svgFiles.forEach(filename => {
-                fetch(`./company_svgs/${filename}`)
-                    .then(response => response.text())
-                    .then(svgContent => {
-                        const div = document.createElement('div');
-                        div.className = 'flex items-center justify-center p-2';
-                        div.style.width = '160px'; // Set a fixed width
-                        div.style.height = '60px'; // Set a fixed height
-                        div.innerHTML = svgContent;
+                    const svg = div.querySelector('svg');
+                    if (svg) {
+                        svg.classList.add('logo-svg');
+                        svg.style.maxWidth = '100%';
+                        // Comment out the next line to remove max height constraint
+                        svg.style.maxHeight = '50px'; // Adjust this value to set the maximum height of logos
+                        svg.style.width = 'auto';
+                        svg.style.height = 'auto';
+                        svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+                    }
 
-                        // Adjust SVG to fit within the container
-                        const svg = div.querySelector('svg');
-                        if (svg) {
-                            svg.setAttribute('width', '100%');
-                            svg.setAttribute('height', '100%');
-                            svg.style.maxWidth = '100%';
-                            svg.style.maxHeight = '100%';
-                            svg.style.objectFit = 'contain';
-                        }
+                    div.addEventListener('mouseover', () => {
+                        const appName = filename.split('.')[0].replace(/-/g, ' ').replace(/_/g, ' ');
+                        div.setAttribute('title', `Integrate with ${appName}`);
+                    });
 
-                        logoContainer.appendChild(div);
-                    })
-                    .catch(error => console.error(`Error loading ${filename}:`, error));
-            });
+                    logoContainer.appendChild(div);
+                })
+                .catch(error => console.error(`Error loading ${filename}:`, error));
         });
+    });
     </script>
 </body>
 </html>

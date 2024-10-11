@@ -88,7 +88,7 @@
         .logo-container {
             transition: all 0.3s ease;
             position: relative;
-            width: 120%;
+            width: 110%;
             /* Adjust the height as needed */
             height: 80px;
             display: flex;
@@ -458,7 +458,6 @@
             'icons8-final-cut-pro-x.svg',
             'icons8-mail.svg',
             'icons8-messages.svg',
-            // 'macos.svg',
             'notion-wordmark.svg',
             'safari-wordmark.svg',
             'sheets-wordmark.svg',
@@ -467,42 +466,52 @@
             'whatsapp-wordmark.svg',
             'zoom-wordmark.svg'
         ];
+
         function animateLogos() {
             logoContainer.querySelectorAll('.logo-container').forEach((logo, index) => {
                 setTimeout(() => logo.style.animation = `fadeIn 0.5s ease forwards`, index * 100);
             });
         }
 
-        svgFiles.forEach((filename, index) => {
-            fetch(`./company_svgs/${filename}`)
-                .then(response => response.text())
-                .then(svgContent => {
-                    const div = document.createElement('div');
-                    div.className = 'logo-container';
-                    div.style.opacity = '0';
-                    div.innerHTML = svgContent;
+        function createLogo(filename, svgContent) {
+            const div = document.createElement('div');
+            div.className = 'logo-container';
+            div.style.opacity = '0';
+            div.innerHTML = svgContent;
 
-                    const svg = div.querySelector('svg');
-                    if (svg) {
-                        svg.classList.add('logo-svg');
-                        svg.style.cssText = 'max-width:100%;max-height:50px;width:auto;height:auto;';
-                        svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-                    }
-
-                    div.title = `Integrate with ${filename.split('.')[0].replace(/-|_/g, ' ')}`;
-                    logoContainer.appendChild(div);
-                })
-                .catch(error => console.error(`Error loading ${filename}:`, error));
-        });
-
-        const observer = new IntersectionObserver(entries => {
-            if (entries[0].isIntersecting) {
-                animateLogos();
-                observer.disconnect();
+            const svg = div.querySelector('svg');
+            if (svg) {
+                svg.classList.add('logo-svg');
+                svg.style.cssText = 'max-width:100%;max-height:50px;width:auto;height:auto;';
+                svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
             }
-        }, {threshold: 0.1});
 
-        observer.observe(document.getElementById('app-logos'));
+            div.title = `Integrate with ${filename.split('.')[0].replace(/-|_/g, ' ')}`;
+            return div;
+        }
+
+        Promise.all(svgFiles.map(filename =>
+            fetch(`./company_svgs/${filename}`).then(response => response.text())
+        )).then(svgContents => {
+            svgContents.forEach((svgContent, index) => {
+                logoContainer.appendChild(createLogo(svgFiles[index], svgContent));
+            });
+
+            // Check if the section is already in view
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    animateLogos();
+                    observer.disconnect();
+                }
+            }, {threshold: 0.1});
+
+            observer.observe(logoContainer);
+
+            // Animate logos if they're already in view
+            if (logoContainer.getBoundingClientRect().top < window.innerHeight) {
+                animateLogos();
+            }
+        }).catch(error => console.error('Error loading SVGs:', error));
     });
     </script>
 </body>

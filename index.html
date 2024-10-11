@@ -175,10 +175,13 @@
         </header>
 
         <main>
-            <section>
+            <section class="relative overflow-hidden">
                 <div class="container mx-auto px-4 py-16 text-center">
-                    <h1 class="font-serif text-5xl md:text-6xl font-bold mb-6 text-gray-900">Stay Ahead of the Curve</h1>
-                    <p class="text-xl md:text-2xl mb-8 text-gray-600">Reiden learns your workflow, suggesting smart shortcuts to save you 8 days a year</p>
+                    <h1 class="text-5xl md:text-6xl mb-6 text-gray-900 font-bold relative z-10">
+                        <span class="block mb-2">Your Brilliant</span>
+                        <span class="block bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Keyboard Shortcut Copilot</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl mb-8 text-gray-600">Work faster, not harder. Save 8 days a year</p>
                     <form id="downloadForm" class="mb-8 flex justify-center">
                         <input type="email" id="emailInput" placeholder="Email (optional)" class="px-4 py-2 rounded-l-full border-2 border-primary focus:outline-none focus:ring-2 focus:ring-primary">
                         <button type="submit" class="bg-primary text-white px-6 py-2 rounded-r-full hover:bg-secondary transition duration-300 flex items-center">
@@ -198,9 +201,10 @@
                             frameborder="0"
                             allow="autoplay; encrypted-media"
                             allowfullscreen>
-                        </iframe>
+                            </iframe>
                         </div>
                     </div>
+                </div>
             </section>
         </main>
         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>

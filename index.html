@@ -34,12 +34,16 @@
         }
     </script>
     <style>
-        .hero-gradient {
-            background: linear-gradient(135deg, #F3F4F6, #8a5cf65f, #2dd4be73);
+        @media (max-width: 640px) {
+            .hide-on-mobile {
+                display: none;
+            }
+        }
+        .grid-background {
             position: relative;
             overflow: hidden;
         }
-        .hero-gradient::before {
+        .grid-background::before {
             content: '';
             position: absolute;
             top: 0;
@@ -49,11 +53,7 @@
             background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.1'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             animation: animatedBackground 160s linear infinite;
         }
-        @media (max-width: 640px) {
-            .hide-on-mobile {
-                display: none;
-            }
-        }
+
         @keyframes animatedBackground {
             from {
                 background-position: 0 0;
@@ -62,6 +62,14 @@
                 background-position: 100% 100%;
             }
         }
+        .hero-gradient {
+            background: linear-gradient(135deg, #F3F4F6, #8a5cf65f, #2dd4be73);
+        }
+
+        .how-it-works-gradient {
+            background: linear-gradient(135deg, #F3F4F6, #F3F4F6, #F3F4F6);
+        }
+
         .gradient-bg {
             background: linear-gradient(135deg, #F3F4F6, #a78bfa40, #5eead480);
         }
@@ -149,7 +157,7 @@
     </script>
 </head>
 <body class="font-sans">
-    <div class="hero-gradient">
+    <div class="hero-gradient grid-background">
         <header class="container mx-auto px-4 py-6">
             <nav class="flex justify-between items-center">
                 <div class="text-2xl font-bold text-primary">Reiden.ai</div>
@@ -200,8 +208,8 @@
             </div>
         </div>
     </section>
-        <section id="how-it-works" class="bg-gray-50 py-20">
-            <div class="container mx-auto px-4">
+    <section id="how-it-works" class="how-it-works-gradient grid-background py-20">
+        <div class="container mx-auto px-4">
                 <h2 class="font-serif text-4xl font-bold mb-12 text-center">How it works</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="text-center relative">
@@ -346,7 +354,7 @@
             </div>
         </section>
 
-        <section class="gradient-bg py-20">
+        <section class="gradient-bg grid-background py-20">
             <div class="container mx-auto px-4 text-center">
                 <h2 class="font-serif text-3xl md:text-4xl font-bold mb-8 text-gray-800">Ready to Boost Your Productivity?</h2>
                 <button id="bottomDownloadButton" class="bg-white text-purple-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-md hover:shadow-lg">

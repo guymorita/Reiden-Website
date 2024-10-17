@@ -192,6 +192,22 @@
                             </svg>
                         </button>
                     </form>
+                    <div class="mb-12 text-center">
+                        <div class="bg-gradient-to-r from-primary/10 to-secondary/10 p-6 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-bold mb-4 text-gray-800">We're live on Product Hunt! 🚀</h3>
+                            <p class="mb-4 text-gray-600">Support us and be part of our journey. Available for:</p>
+                            <div id="countdown" class="text-3xl font-bold text-primary mb-4"></div>
+                            <a href="https://www.producthunt.com/posts/reiden-ai" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-[#DA552F] text-white rounded-full hover:bg-[#B83E1F] transition duration-300 shadow-lg">
+                                <svg class="w-6 h-6 mr-2" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                                    <g fill="none" fill-rule="evenodd">
+                                        <path d="M40 20c0 11.046-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0s20 8.954 20 20" fill="#FFF"/>
+                                        <path d="M22.667 20H17v-6h5.667a3 3 0 0 1 0 6m0-10H13v20h4v-6h5.667a7 7 0 1 0 0-14" fill="#DA552F"/>
+                                    </g>
+                                </svg>
+                                Check us out on Product Hunt
+                            </a>
+                        </div>
+                    </div>
                     <div class="max-w-6xl mx-auto mb-16">
                         <div class="relative" style="padding-bottom: 56.25%;">
                             <iframe
@@ -537,5 +553,26 @@
         }).catch(error => console.error('Error loading SVGs:', error));
     });
     </script>
+<script>
+    function updateCountdown() {
+        const now = new Date();
+        const target = new Date('2024-10-18T00:01:00-07:00');  // Oct 18, 2024, 12:01 AM PST
+        const difference = target - now;
+
+        if (difference > 0) {
+            const hours = Math.floor(difference / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('countdown').textContent =
+                `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        } else {
+            document.getElementById('countdown').textContent = 'Offer ended';
+        }
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);  // Update every second
+</script>
 </body>
 </html>
